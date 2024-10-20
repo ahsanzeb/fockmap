@@ -1,0 +1,113 @@
+
+
+
+##########################################################################
+                          Instructions
+##########################################################################
+
+Two Steps:
+
+1. Compile the library to obtain fockmap.a 
+2. Compile the test program that uses fockmap.a 
+
+These two steps are briefly explained below.
+
+--------------------------------------------------------------------------
+                       1. Compilation of the library
+--------------------------------------------------------------------------
+
+FockMap uses a makefile for its compilation. Edit Makefile in "fockmap/src/" 
+if you like to change the compiler. On the command line, go to the source directory 
+"fockmap/src/" and run "make" to compile the library. This will produce the 
+library archive "fockmap.a" and also copy it to the test program directory
+"fockmap/test/"
+
+--------------------------------------------------------------------------
+                      2. Compilation of the test program
+--------------------------------------------------------------------------
+
+Edit makefile "fockmap/test/Makefile" if you like to change the compiler. 
+On the command line, go to the source directory "fockmap/test/" and 
+run "make" to compile the program. This will produce the executable "test"
+that can be run to test the library routines. To see the usage of the 
+library routines, please see the source file for the test program 
+"fockmap/test/main.f".
+
+##########################################################################
+
+
+
+
+
+
+
+
+##########################################################################
+                        Directory Structure
+##########################################################################
+
+- source files of the library and its makefile are in the directory "fockmap/src/"
+- source file for the test program and its makefile in the directory "fockmap/test/"
+
+                    fockmap
+                      |
+                     / \
+                  src   test
+                  /      \
+library source files      test program source files
+
+--------------------------------------------------------------------------
+              library source files in "fockmap/src/"
+--------------------------------------------------------------------------
+
+mapping.f:
+Calculates the mapping.
+
+mapn2.f:
+Calculates the mapping for N=2 case.
+
+triangles.f:
+Calculates the triangular regions of the mapping.
+
+basis.f:
+Calculates the number of permutations, and the occupation frequencies for N-1,N modes.
+
+basisall.f:
+Calculates the number of permutations, and the occupation frequencies for 0,1,...,N modes
+
+ratios.f:
+Calculates the rations of the normalisation factors of the pair of permutation symmetric states for N-1 and N modes that are linked to each other via the mapping.
+
+ratiosall.f:
+Calculates the rations of the normalisation factors of the pair of permutation symmetric states for p-1 and p modes (p=1,...,N-1) that are linked to each other via the mapping.
+
+factorial.f: 
+Contains the factorial function.
+
+binomial.f: 
+Contains the binomial function.
+
+sizes.f: 
+Calculate the sizes of permutation symmetric subspaces for 0,1,...,N modes.
+
+Makefile:
+makefile for the library.
+
+
+--------------------------------------------------------------------------
+              test program in "fockmap/test/"
+--------------------------------------------------------------------------
+
+
+main.f:
+Illustrates and tests calls to various library routines
+
+Makefile:
+makefile for the test program.
+
+##########################################################################
+
+
+
+
+
